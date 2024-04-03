@@ -31,10 +31,9 @@ int     *ft_range(int start, int end)
 	size = (end - start);
 	if (size < 0)
 		size *= -1;
+	size += 1;
 	printf("size: %d\n", size);
-	range =(int *) malloc(sizeof(int) * size + 1);
-		printf("here");
-
+	range =(int *) malloc(sizeof(int) * size);
 	if (!range)
 		return (NULL);
 	while (i < size)
@@ -55,7 +54,7 @@ int main()
 	int *range = ft_range(0, -3);
 	int size = 4;
 	int i = 0;
-	while (i < size);
+	while (i < size)
 	{
 		printf("\n%d ", range[i]);
 		i++;
