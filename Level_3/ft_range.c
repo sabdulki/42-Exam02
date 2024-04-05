@@ -32,8 +32,7 @@ int     *ft_range(int start, int end)
 	if (size < 0)
 		size *= -1;
 	size += 1;
-	printf("size: %d\n", size);
-	range =(int *) malloc(sizeof(int) * size);
+	range = (int *) malloc(sizeof(int) * size);
 	if (!range)
 		return (NULL);
 	while (i < size)
@@ -43,7 +42,6 @@ int     *ft_range(int start, int end)
 			start += 1;
 		else
 			start -=1;
-		printf("r: %d	", range[i]);
 		i++;
 	}
 	return (range);
@@ -51,13 +49,12 @@ int     *ft_range(int start, int end)
 
 int main()
 {
-	int *range = ft_range(0, -3);
-	int size = 4;
+	int *range = ft_range(5, -9);
+	int size = 15;
 	int i = 0;
 	while (i < size)
 	{
-		printf("\n%d ", range[i]);
+		printf("%d\n", range[i]);
 		i++;
 	}
-	
 }
