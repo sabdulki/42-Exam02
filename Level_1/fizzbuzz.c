@@ -58,19 +58,27 @@ void write_nbr(int n)
 	}
 }
 
+void put_nbr(int n)
+{
+	char *str = "0123456789";
+	if (n >= 10)
+		put_nbr(n / 10);
+	write(1, &str[n % 10], 1);
+}
+
 int main(void)
 {
 	int i = 1;
 	while(i < 101)
 	{	
-		if (i % 3 == 0 && i % 5 == 0)
+		if (i % 4 == 0 && i % 7 == 0)
 			write(1, "fizzbuzz", 8);
-		else if (i % 5 == 0)
+		else if (i % 7 == 0)
 			write(1, "buzz", 4);
-		else if (i % 3 == 0)
+		else if (i % 4 == 0)
 			write(1, "fizz", 4);
 		else
-			write_nbr(i);
+			put_nbr(i);
 		write(1, "\n", 1);
 		i++;
 	}

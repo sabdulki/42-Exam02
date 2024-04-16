@@ -27,7 +27,7 @@ $
 #include <unistd.h>
 #include <stdio.h>
 
-int		check_dups_upgrade(int index, char*str, char c)
+int		check_dups_upgrade(char *str, int index,  char c)
 {
 	int i = 0;
 	while(str[i] && (i < index || index == -1))
@@ -47,7 +47,7 @@ int main(int ac, char** av)
 		int j = 0;
 		while(av[1][i])
 		{
-				if (check_dups_upgrade(i, av[1], av[1][i]) == 0 && check_dups_upgrade(-1, av[2], av[1][i]) == 1)
+				if (check_dups_upgrade(av[1], i, av[1][i]) == 0 && check_dups_upgrade(av[2], -1, av[1][i]) == 1)
 				{
 					write(1, &av[1][i], 1);
 				}
