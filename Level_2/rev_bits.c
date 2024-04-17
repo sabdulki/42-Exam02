@@ -27,12 +27,12 @@ unsigned char	reverse_bits(unsigned char octet)
 	int i = 8;
 	unsigned int res = 0;
 
-	while(i > 0)
+	while (i > 0)
 	{
 		res = res * 2 + (octet % 2); //(octet % 2) find the smallest bit in byte (and it's the last right bit)
 		// it's 0 or 1
 		octet = octet >> 1;
-		i++; 
+		i--; 
 	}
 	return (res);
 }

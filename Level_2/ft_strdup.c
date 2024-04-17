@@ -13,6 +13,7 @@ char    *ft_strdup(char *src);
 
 // не забывай проверки с malloc!
 #include <stdlib.h>
+#include <stdio.h>
 
 char    *ft_strdup(char *src)
 {
@@ -30,4 +31,27 @@ char    *ft_strdup(char *src)
 	}
 	str[i] = '\0';
 	return (str);
+}
+
+// char *strdup2(char *str)
+// {
+// 	int i = 0;
+// 	int len = 0;
+// 	while(str[len])
+// 		len++;
+// 	char * res = malloc(sizeof(char) * len + 1);
+// 	if (!res)
+// 		return(NULL);
+// 	while(str[i] && i < len)
+// 	{
+// 		res[i] = str[i];
+// 		i++;
+// 	}
+// 	res[i] = '\0';
+// 	return (res);
+// }
+
+int main()
+{
+	printf("%s\n", ft_strdup("asdfghjkl;"));
 }

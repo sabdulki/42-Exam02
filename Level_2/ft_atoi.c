@@ -15,23 +15,46 @@ int	ft_atoi(const char *str);
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 
 
+// int	ft_atoi(const char *str)
+// {
+// 	int i = 0;
+// 	int res = 0;
+// 	int sign = 1;
+// 	while((str[i] >= 9 && str[i] <= 13) || str[1] == ' ')
+// 		i++;
+// 	if (str[i] == '-')
+// 		sign = -1;
+// 	if (str[i] == '+' || str[i] == '-')
+// 		i++;
+// 	while(str[i] >= '0' && str[i] <= '9')
+// 	{
+// 		res = res * 10 + (str[i] - '0'); //1, 12, 123  
+// 		i++;
+// 	}
+// 	return (res * sign);
+// }
 
-int	ft_atoi(const char *str)
+
+//repetition
+int ft_atoi(char *str)
 {
 	int i = 0;
 	int res = 0;
 	int sign = 1;
-	while((str[i] >= 9 && str[i] <= 13) || str[1] == ' ')
+	while(str[i] == ' ' || str[i] == '\t')
 		i++;
-	if (str[i] == '-')
-		sign = -1;
 	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while(str[i] >= '0' && str[i] <= '9')
 	{
-		res = res * 10 + (str[i] - '0'); //1, 12, 123  
+		if (str[i] == '-')
+			sign *= -1;
+		i++;
+	}
+	while((str[i] >= '0' && str[i] <= '9'))
+	{
+		res = (res * 10) + (str[i] - '0'); //1, 12, 
 		i++;
 	}
 	return (res * sign);
@@ -39,6 +62,9 @@ int	ft_atoi(const char *str)
 
 int main()
 {
-	int c = ft_atoi("123");
+	char * str = "-2147483640987654321";
+	int c = ft_atoi(str);
 	printf("%d\n", c);
+	int n = atoi(str);
+	printf("%d\n", n);
 }

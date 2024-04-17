@@ -50,6 +50,8 @@ int main(int ac, char** av)
 			res = n1 / n2;
 		else if (av[2][0] == '*')
 			res = n1 * n2;
+		else if (av[2][0] == '%')
+			res = n1 % n2;
 		printf("%d", res);
 	}
 	printf("\n");
